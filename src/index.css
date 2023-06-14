@@ -1,13 +1,116 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --clr-accent: #f55a5a;
+  --clr-text-main: #2b283a;
+  --clr-text-light: #918e9b;
+  --ff-main: "Inter", sans-serif;
 }
+
+img{
+  display: block;
+  width: 100%;
+}
+
+/*Navbar*/
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-accent);
+  color: #ffffff;
+  padding: 1em 0;
+  gap: 0.5em;
+}
+.nav--title {
+  font-weight: 500;
+  line-height: 1em;
+  letter-spacing: -0.075em;
+}
+.nav--logo {
+  height: 2em;
+}
+
+/*Card*/
+.cards-list {
+display: flex;
+flex-direction: column;
+padding: 3em;
+}
+.card {
+  color: var(--clr-text-main);
+  display: flex;
+  flex-direction: row;
+  padding: 2em 0;
+}
+.card--img {
+  height: 100%;
+  width: 20em;
+  border-radius: 0.3em;
+  object-fit: cover;
+  transform: scale(1);
+  transition: all 650ms ease-in-out;
+}
+.card--img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
+    0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11),
+    0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
+  }
+  .card--info {
+    margin-left: 1em;
+    padding: 0.5em;
+  }
+  .card--location-icon {
+    color: var(--clr-accent);
+  }
+  .card--location {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    margin: 0 1em 0 0.25em;
+    color: var(--clr-text-main);
+  }
+  .card--location-url {
+    color: var(--clr-text-light);
+    font-size: 0.75rem;
+  }
+  
+  .card--title {
+    font-size: 2rem;
+    margin: 0.25em 0;
+    font-weight: 700;
+  }
+  
+  .card--date {
+    font-weight: 700;
+  }
+  
+  .card--desc {
+    max-width: 50rem;
+    margin-top: 1.5em;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+  }
+/* Adding Card Divider*/ 
+  .cards-list > .card + .card {
+    padding: 2em 0;
+    border-top: 1px solid var(--clr-text-light);
+  }
+  
+  .cards-list .card:first-child {
+    padding-top: 0;
+  }
+  
+  .cards-list .card:last-child {
+    padding-bottom: 0;
+  }
